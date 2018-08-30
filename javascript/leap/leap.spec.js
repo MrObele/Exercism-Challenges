@@ -11,12 +11,12 @@ describe('A leap year', () => {
     expect(year.isLeap()).toBeTruthy();
   });
 
-  xtest('year divisible by 100, not divisible by 400: common year', () => {
+  test('year divisible by 100, not divisible by 400: common year', () => {
     const year = new Year(2100);
     expect(year.isLeap()).toBeFalsy();
   });
 
-  xtest('year divisible by 400: leap year', () => {
+  test('year divisible by 400: leap year', () => {
     const year = new Year(2000);
     expect(year.isLeap()).toBeTruthy();
   });
