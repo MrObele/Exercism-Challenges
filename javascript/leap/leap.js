@@ -1,12 +1,14 @@
-class Year{
-	isLeap(year){
-		if(year%4 === 0) {
-		 if ((year%100 != 0 )|| (year%400 === 0)){
-			}	return true;
-		}else{
-			return false;
-		}
-	}
+
+class Year {
+	constructor(year) {
+	this.year = year;
 }
+
+isLeap() {
+	return ((this.year % 4 === 0) && (this.year % 100 !== 0 || this.year % 400 === 0));
+
+}
+}
+
 
 export default Year;
