@@ -1,31 +1,27 @@
+class Transcriptor {
+  toRna(dna) {
+   
+    const dnaMap = {
+      C : 'G',
+      G : 'C',
+      A : 'U',
+      T : 'A'
 
-class Transcriptor{
+    };
 
+    const rna = [];
+    const dnaArray = dna.split('');
 
-toRna(dna){
-  let  checkDna = ['C','G','A','T',''];
-  if(dna == '')
-{
-  return '';
-}
-else{
-  let rna = dna.split('').map(function(item){
-        if(item == 'C'){
-          return 'G';
-        }else if(item == 'G'){
-          return 'C';
-        }else if(item == 'A'){
-          return 'U';
-        }else if(item == 'T'){
-          return 'A';
-        }else{
-          throw 'Invalid input DNA.'
-        }
-  });
-}
-
-	return rna.join('');
-}
+    for (let i = 0; i < dnaArray.length; i++) {
+      if (!dnaMap[dnaArray[i]]) {
+        throw new Error('Invalid input DNA.')
+      } else {
+        rna[i] = dnaMap[dnaArray[i]];
+      }
+    } 
+    return rna.join('');
+  } 
+  
 }
 
 export default Transcriptor;
