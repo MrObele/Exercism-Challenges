@@ -24,7 +24,7 @@
   }
 
 
- get ldifference() {
+ get difference() {
      return this.squareOfSum - this.sumOfSquares;
   }
   
