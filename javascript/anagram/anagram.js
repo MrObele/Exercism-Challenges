@@ -4,27 +4,16 @@ class Anagram {
   }
 
   matches(matchingArray) {
-    let output = [];
-    let wordArray = this.word.split('').sort();
-
-    for (let i = 0; i < matchingArray.length; i++) {
-      if (matchingArray[i].split('').sort() == wordArray) {
-        output.push(matchingArray[i]);
-        return output;
-
-      return matchingArray[i].split('').sort();
-     
-      }
-    }
-    return output;
     
 
+let newWord = this.word.split('').sort().join('');
+
+    return matchingArray.filter(function(item){
+      return (item.split('').sort().join('') === newWord);
+    })
 
   }
 }
 
-const ls = new Anagram('anna')
-
-console.log(ls.matches('nana'));
 
 export default Anagram;
