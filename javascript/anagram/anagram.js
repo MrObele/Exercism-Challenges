@@ -1,19 +1,30 @@
 class Anagram {
   constructor(word) {
-    this.word = word;
-  }
 
-  matches(matchingArray) {
+    this.word = word.toLowerCase();
+  }
+   
+
+  matches(inputArray) {
+    let output = [];
     
 
-let newWord = this.word.split('').sort().join('');
+    for (let i = 0; i < inputArray.length; i++) {
+      if (inputArray[i].toLowerCase() == this.word) {
 
-    return matchingArray.filter(function(item){
-      return (item.split('').sort().join('') === newWord);
-    })
-
+      } else if (inputArray[i].toLowerCase().split('').sort().join('') == this.word.split('').sort().join('')) {
+        output.push(inputArray[i]);
+      }
+    }
+    return output;
   }
-}
 
+}
+// let arr = ['enlists', 'google', 'inlets', 'banana'];
+// let tester = 'listen'
+// const test = new Anagram(tester);
+
+
+// console.log(test.matches(arr));
 
 export default Anagram;
