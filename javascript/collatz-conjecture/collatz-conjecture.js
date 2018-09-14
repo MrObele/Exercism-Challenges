@@ -1,6 +1,6 @@
-class CollatzConjecture {
 
-   steps(num){
+
+   function steps(num){
     let counter = 0;
     
     if (num === 1) {
@@ -25,12 +25,9 @@ class CollatzConjecture {
   return counter;
   }
 
-}
 
 
-
-
-export default CollatzConjecture;
+export { steps };
 
 
 
