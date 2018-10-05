@@ -1,20 +1,22 @@
 class Raindrops
     def self.convert(num)
-        three = "Pling"
-        five = "Plang"
-        seven = "Plong"
-
-        case num
-        when (num%3 == 0 && num%5 == 0 && num%7 == 0) then return three+five+seven 
-        when (num%3 == 0 && num%5 == 0) then return three+five 
-        when (num%5 == 0 && num%7 == 0) then return five+seven 
-        when (num%3 == 0 && num%7 == 0) then return three+seven 
-        when (num%3 == 0) then return three
-        when (num%5 == 0) then return five
-        when (num%7 == 0) then return seven  
-        else  
-            return num.to_s        
-        end
-       
+      
+        
+        return "PlingPlangPlong" if (num%3 == 0 && num%5 == 0 && num%7 == 0) 
+         
+        return "PlingPlang" if (num%3 == 0 && num%5 == 0)
+             
+        return "PlangPlong" if (num%5 == 0 && num%7 == 0) 
+            
+        return "PlingPlong" if (num%3 == 0 && num%7 == 0)
+            
+        return "Pling" if (num%3 == 0) 
+            
+        return "Plang" if (num%5 == 0) 
+             
+        return "Plong"  if (num%7 == 0) 
+          
+        return num.to_s        
+    
     end
 end
