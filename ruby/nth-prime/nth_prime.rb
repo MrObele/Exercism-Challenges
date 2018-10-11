@@ -8,21 +8,19 @@ class Prime
       return 2
     end
     result = [2]
-    while result.length <= args do
-      for i in 3...10000 do
+      for i in 3..20000 do
         counter = 0
         for j in 2...i
           if i%j== 0
             counter+= 1
           end
-          if counter == 0
-            result << i
-          end 
-    
         end
+        if counter == 0
+          result << i
+        end
+        break if result.length == args 
       end
-    end
-    result.length
+    result.last
   end
 end
 
